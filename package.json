@@ -1,7 +1,7 @@
 {
-  "name": "barebones-web-boilerplate",
+  "name": "concept-bucket",
   "version": "1.0.0",
-  "description": "A barebones web boiler that compiles Sass, converts ES6, live reloads and starts a local server using Gulp. Perfect for fast conceptual static HTML builds.",
+  "description": "A bunch of experimental, proof of concepts that may or may not go onto be something grand.",
   "main": "/public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
