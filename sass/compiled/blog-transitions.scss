@@ -1,0 +1,207 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-size: calc(12px + .3vh + .3vw);
+  font-weight: 300;
+  font-family: system;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+/* text */
+h1, .post-title {
+  font-size: calc(24px + .8vh + .8vw);
+  margin-bottom: calc(24px + .8vh + .8vw);
+  font-weight: 500;
+  line-height: 1.2;
+}
+h2 {
+  font-size: calc(20px + .6vh + .6vw);
+  margin-bottom: calc(19px + .6vh + .6vw);
+  font-weight: 500;
+  line-height: 1.2;
+}
+h3 {
+  font-size: calc(18px + .6vh + .6vw);
+  margin-bottom: calc(16px + .6vh + .6vw);
+  font-weight: 500;
+  line-height: 1.2;
+}
+h4 {
+  font-size: calc(16px + .5vh + .5vw);
+  margin-bottom: calc(15px + .5vh + .5vw);
+  font-weight: 400;
+  line-height: 1.4;
+}
+h5 {
+  font-size: calc(13px + .4vh + .4vw);
+  margin-bottom: calc(13px + .4vh + .4vw);
+  font-weight: 400;
+  line-height: 1.4;
+}
+h6, small {
+  font-size: calc(10px + .1vh + .1vw);
+  margin-bottom: calc(10px + .1vh + .1vw);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* the post title should use the H1 regardless of header used */
+.post-title {
+  margin-bottom: calc(10px + .5vh + .5vw);
+}
+.post-author {
+  margin-bottom: calc(20px + 1.5vh + 1.5vw);
+}
+
+/* header and navigation */
+header {
+  position: fixed;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+  height: calc(40px + 1.5vh + 1.5vw);
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,.06);
+}
+header nav {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+header nav li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 calc(5px + 1vw);
+  line-height: calc(40px + 1.5vh + 1.5vw);
+  font-weight: 400;
+}
+
+/* main layout parts */
+main {
+  position: relative;
+  top: calc(40px + 1.5vh + 1.5vw);
+}
+.page-title {
+  display: block;
+  width: 100%;
+  background-color: #fdd2d2;
+  padding: calc(4vh + 4vw) calc(1vh + 1vw) calc(6vh + 6vw) calc(1vh + 1vw);
+  margin-bottom: calc(-2vh + -2vw); /* this will bring the padding back down to 6 even */
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0,0,0,.01);
+}
+.page-title h1 {
+  font-size: calc(18px + 1.2vh + 1.2vw);
+  margin-bottom: 0px;
+  line-height: 2;
+  font-weight: 200;
+  letter-spacing: calc(2vw + 2vh);
+  padding-left: calc(2vw + 2vh); /* this is to offset the letter spacing */
+  text-align: center;
+  text-transform: uppercase;
+
+}
+.page-title em {
+  display: block;
+  margin-top: calc(10px + .5vh + .5vw);
+}
+.center-wrap {
+  margin: 0 auto;
+  max-width: calc(400px + 15vh + 15vw);
+  padding: 0 calc(2vh + 2vw);
+}
+
+
+/* article styles */
+article {
+  margin-bottom: calc(4vh);
+}
+article .banner {
+  position: relative;
+  overflow: hidden;
+  padding: calc(20px + 2.5vh + 2.5vw);
+  padding-top: calc(20px + 12vh + 12vw);
+  background: #ffffff;
+  border-radius:  calc(8px + 0.3vh + 0.3vw);
+  cursor: pointer;
+  transform: translate3d(0,0,0) scale3d(1,1,1);
+  transition: 0.3s ease all;
+}
+article .banner aside {
+  position: absolute;
+  top: calc(20px + 2.5vh + 2.5vw);
+  z-index: 2;
+  opacity: 0.9;
+}
+article .banner aside:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+article .banner-background {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  background-position: center;
+  background-size: cover;
+  transition: 0.6s ease all;
+}
+article .banner-content {
+  position: relative;
+  z-index: 2;
+}
+article .banner-content .post-title {
+  max-width: 90%;
+}
+article .banner-content p {
+  margin-bottom: calc(.2vh + .2vw);
+  opacity: 0.9;
+  text-shadow: none;
+}
+
+/* article hover */
+body.blog-feed article .banner:hover {
+  box-shadow: 0 calc(.6vw + .6vh) calc(1.5vw + 1.5vh) rgba(0,0,0,.12);
+  transform: translate3d(0,-20px,0) scale3d(1.02,1.02,1);
+}
+body.blog-feed article .banner:hover .banner-background {
+  top: -70px;
+}
+
+/* lightr v dark repeatable styles */
+.light {
+  color: black;
+  text-shadow: 0 calc(1px + 0.2vh) calc(2px + 0.2vh + 0.2vw) rgba(255,255,255,.07);
+}
+.dark {
+  color: white;
+  text-shadow: 0 calc(1px + 0.2vh) calc(2px + 0.2vh + 0.2vw) rgba(0,0,0,.07);
+}
+.gradient-fade:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+}
+.light .gradient-fade:after {
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.80) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.80) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.80) 100%);
+}
+.dark .gradient-fade:after {
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.80) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.80) 100%);
+}

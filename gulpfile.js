@@ -13,14 +13,18 @@ gulp.task('connect', function(){
 
 // compile sass and log errors in the terminal
 gulp.task('sass', function () {
-  return gulp.src('./sass/styles.scss')
+  // only compile the files inside the compiled directory
+  // this way we can keep reusable styles that @import in the parent /sass folder
+  return gulp.src('./sass/compiled/*.scss')
       .pipe(sass({ errLogToConsole: true }))
       .pipe(gulp.dest('./public/css'));
 });
 
 // transpile our ES6 javascript into ES5
 gulp.task('transpile', function() {
-  return gulp.src('./scripts/*.js')
+  // only compile the files inside the compiled directory
+  // this way we can keep reusable styles that @import in the parent /sass folder
+  return gulp.src('./scripts/compiled/*.js')
       .pipe(babel({
           presets: ['env']
       }))
