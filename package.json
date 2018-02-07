@@ -1,5 +1,5 @@
 {
-  "name": "concept-bucket",
+  "name": "experiments",
   "version": "1.0.0",
   "description": "A bunch of experimental, proof of concepts that may or may not go onto be something grand.",
   "main": "/public/index.html",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessengatai/barebones-web-boilerplate.git"
+    "url": "git+https://github.com/jessengatai/experiments.git"
   },
   "keywords": [
     "boilerplate",
@@ -19,9 +19,9 @@
   "author": "Jesse Ngatai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jessengatai/barebones-web-boilerplate/issues"
+    "url": "https://github.com/jessengatai/experiments/issues"
   },
-  "homepage": "https://github.com/jessengatai/barebones-web-boilerplate#readme",
+  "homepage": "https://github.com/jessengatai/experiments#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
