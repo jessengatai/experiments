@@ -1,0 +1,73 @@
+$letter-spacing: calc(15px + 2vh + 2vw);
+
+/* import base level styles */
+@import "../reset";
+@import "../text";
+
+body {
+  text-align: center;
+  height: 100vh;
+  position: relative;
+}
+
+.content-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+
+  .fx-wrap {
+    position: relative;
+    h1 {
+      font-size: calc(50px + 2vh + 2vw);
+      font-weight: 600;
+      letter-spacing: $letter-spacing;
+      margin-left: $letter-spacing;
+      position: relative;
+      z-index: 2;
+      text-transform: uppercase;
+    }
+    .fx-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate3d(0px, 0px, 0px);
+      transition: transform 2s ease;
+      z-index: 1;
+      @extend h1;
+
+      &:before {
+        content: attr(data-text);
+        position: relative;
+        opacity: .5;
+        z-index: 1;
+      }
+      &.red:before {
+        color: red;
+        z-index: 1;
+        top: -10px;
+      }
+      &.blue:before {
+        color: #5600ff;
+        z-index: 2;
+        top: 10px;
+      }
+      &.green:before {
+        color: #00b8ff;
+        z-index: 3;
+        left: 10px;
+      }
+      &.yellow:before {
+        color: #ffc800;
+        z-index: 4;
+        left: -10px;
+      }
+    }
+
+  }
+
+  p {
+    opacity: 0.3;
+  }
+
+}
