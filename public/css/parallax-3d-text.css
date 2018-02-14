@@ -90,18 +90,18 @@ body {
       .content-wrap .fx-wrap .fx-text.red:before {
         color: red;
         z-index: 1;
-        top: -10px; }
+        top: -8px; }
       .content-wrap .fx-wrap .fx-text.blue:before {
         color: #5600ff;
         z-index: 2;
-        top: 10px; }
+        top: 8px; }
       .content-wrap .fx-wrap .fx-text.green:before {
         color: #00b8ff;
         z-index: 3;
-        left: 10px; }
+        left: 8px; }
       .content-wrap .fx-wrap .fx-text.yellow:before {
         color: #ffc800;
         z-index: 4;
-        left: -10px; }
+        left: -8px; }
   .content-wrap p {
     opacity: 0.3; }

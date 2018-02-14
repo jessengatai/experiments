@@ -18,6 +18,7 @@ body {
 
   .fx-wrap {
     position: relative;
+
     h1 {
       font-size: calc(50px + 2vh + 2vw);
       font-weight: 600;
@@ -27,14 +28,16 @@ body {
       z-index: 2;
       text-transform: uppercase;
     }
+
     .fx-text {
+      @extend h1;
+
       position: absolute;
       top: 0;
       left: 0;
       transform: translate3d(0px, 0px, 0px);
       transition: transform 2s ease;
       z-index: 1;
-      @extend h1;
 
       &:before {
         content: attr(data-text);
@@ -45,22 +48,22 @@ body {
       &.red:before {
         color: red;
         z-index: 1;
-        top: -10px;
+        top: -8px;
       }
       &.blue:before {
         color: #5600ff;
         z-index: 2;
-        top: 10px;
+        top: 8px;
       }
       &.green:before {
         color: #00b8ff;
         z-index: 3;
-        left: 10px;
+        left: 8px;
       }
       &.yellow:before {
         color: #ffc800;
         z-index: 4;
-        left: -10px;
+        left: -8px;
       }
     }
 
