@@ -71,7 +71,7 @@ body {
       font-size: calc(50px + 2vh + 2vw);
       font-weight: 600;
       letter-spacing: calc(15px + 2vh + 2vw);
-      margin-left: calc(15px + 2vh + 2vw);
+      padding-left: calc(15px + 2vh + 2vw);
       position: relative;
       z-index: 2;
       text-transform: uppercase; }

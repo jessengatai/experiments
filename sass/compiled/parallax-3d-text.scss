@@ -23,15 +23,13 @@ body {
       font-size: calc(50px + 2vh + 2vw);
       font-weight: 600;
       letter-spacing: $letter-spacing;
-      margin-left: $letter-spacing;
+      padding-left: $letter-spacing;
       position: relative;
       z-index: 2;
       text-transform: uppercase;
     }
-
     .fx-text {
       @extend h1;
-
       position: absolute;
       top: 0;
       left: 0;
