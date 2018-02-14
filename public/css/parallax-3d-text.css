@@ -52,56 +52,146 @@ h6 {
   letter-spacing: 3px;
   text-transform: uppercase; }
 
-p {
-  margin-bottom: calc(24px + .8vh + .8vw); }
+p, input[type="text"],
+textarea, button {
+  margin-bottom: calc(24px + .8vh + .8vw);
+  font-size: calc(12px + .3vh + .3vw);
+  font-weight: 400;
+  line-height: 1.6; }
+
+/* handle basic inputs */
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: none;
+  border-bottom: solid 2px black;
+  margin: 0px; }
+
+button {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 999px;
+  height: calc(15px + 1.2vh + 1.2vw);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0px;
+  line-height: calc(15px + 1.2vh + 1.2vw);
+  text-align: center;
+  background: white;
+  color: black;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; }
+  button:hover {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); }
+  button.circle {
+    height: calc(15px + 1.2vh + 1.2vw);
+    width: calc(15px + 1.2vh + 1.2vw);
+    padding: 0px; }
 
 body {
+  background: #f5dcdc;
   text-align: center;
-  height: 100vh;
-  position: relative; }
+  height: 200vh;
+  position: relative;
+  transition: background 0.2s ease; }
+
+.instruction-wrap {
+  position: absolute;
+  top: calc(1vh + 1vw);
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  transition: all 0.3s ease; }
+  .night .instruction-wrap {
+    color: white; }
 
 .content-wrap {
-  position: absolute;
-  top: 50%;
+  float: left;
+  position: relative;
+  top: 25%;
   left: 50%;
+  margin: auto;
+  max-width: 90vw;
+  text-overflow: clip;
+  word-break: break-word;
   transform: translate3d(-50%, -50%, 0); }
   .content-wrap .fx-wrap {
     position: relative; }
     .content-wrap .fx-wrap h1, .content-wrap .fx-wrap .fx-text {
       font-size: calc(50px + 2vh + 2vw);
-      font-weight: 600;
-      letter-spacing: calc(15px + 2vh + 2vw);
-      padding-left: calc(15px + 2vh + 2vw);
+      font-weight: 500;
+      letter-spacing: calc(5px + 2vh + 2vw);
       position: relative;
       z-index: 2;
-      text-transform: uppercase; }
+      display: inline-block; }
     .content-wrap .fx-wrap .fx-text {
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate3d(0px, 0px, 0px);
-      transition: transform 2s ease;
+      transform: translate3d(0%, 0%, 0%);
+      transition: transform .2s ease;
       z-index: 1; }
       .content-wrap .fx-wrap .fx-text:before {
         content: attr(data-text);
         position: relative;
-        opacity: .5;
-        z-index: 1; }
+        z-index: 1;
+        transition: all 0.2s ease;
+        left: 0;
+        top: 0;
+        opacity: 0; }
+        .explode .content-wrap .fx-wrap .fx-text:before {
+          opacity: .4; }
       .content-wrap .fx-wrap .fx-text.red:before {
         color: red;
-        z-index: 1;
-        top: -8px; }
+        z-index: 1; }
+        .explode .content-wrap .fx-wrap .fx-text.red:before {
+          top: -8px; }
       .content-wrap .fx-wrap .fx-text.blue:before {
         color: #5600ff;
-        z-index: 2;
-        top: 8px; }
+        z-index: 2; }
+        .explode .content-wrap .fx-wrap .fx-text.blue:before {
+          top: 8px; }
       .content-wrap .fx-wrap .fx-text.green:before {
         color: #00b8ff;
-        z-index: 3;
-        left: 8px; }
+        z-index: 3; }
+        .explode .content-wrap .fx-wrap .fx-text.green:before {
+          left: 8px; }
       .content-wrap .fx-wrap .fx-text.yellow:before {
         color: #ffc800;
-        z-index: 4;
-        left: -8px; }
-  .content-wrap p {
-    opacity: 0.3; }
+        z-index: 4; }
+        .explode .content-wrap .fx-wrap .fx-text.yellow:before {
+          left: -8px; }
+  .content-wrap p, .content-wrap input[type="text"], .content-wrap
+  textarea, .content-wrap button {
+    opacity: 0.5; }
+
+.settings-wrap {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  bottom: calc(1vh + 1vw);
+  left: 50%;
+  transform: translateX(-50%); }
+  .settings-wrap input {
+    margin-right: calc(1vh + 1vw);
+    min-width: 30vw; }
+  @media only screen and (min-width: 800px) {
+    .settings-wrap {
+      display: block; } }
+
+body.night {
+  background: #09091d;
+  color: white; }
+  body.night input {
+    color: #ffffff;
+    border-color: #983aff; }
+  body.night.explode .fx-wrap .fx-text:before {
+    opacity: 0.6; }
+  body.night .fx-wrap .fx-text.yellow:before {
+    color: #983aff; }

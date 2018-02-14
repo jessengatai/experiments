@@ -1,0 +1,23 @@
+.github-wrap {
+  position: fixed;
+  bottom: calc(1vh + 1vw);
+  left: calc(1vh + 1vw);
+  right: calc(1vh + 1vw); }
+  .github-wrap a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+    transform: translateY(0px);
+    transition: all 0.3s ease; }
+    .github-wrap a:hover {
+      transform: translateY(-5px); }
+  .github-wrap .left-link {
+    display: block;
+    float: left; }
+    .github-wrap .left-link button {
+      margin-right: calc(.5vw + .5vh); }
+  .github-wrap .right-link {
+    display: block;
+    float: right; }
+    .github-wrap .right-link button {
+      margin-left: calc(.5vw + .5vh); }

@@ -1,19 +1,41 @@
-$letter-spacing: calc(15px + 2vh + 2vw);
+$letter-spacing: calc(5px + 2vh + 2vw);
 
 /* import base level styles */
 @import "../reset";
 @import "../text";
+@import "../forms";
 
 body {
+  background: #f5dcdc;
   text-align: center;
-  height: 100vh;
+  height: 200vh;
   position: relative;
+  transition: background 0.2s ease;
 }
 
-.content-wrap {
+// the instructions wrap
+.instruction-wrap {
   position: absolute;
-  top: 50%;
+  top: calc(1vh + 1vw);
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  .night & {
+    color: white;
+  }
+}
+
+// the main content wrap
+.content-wrap {
+  float: left;
+  position: relative;
+  top: 25%;
   left: 50%;
+  margin: auto;
+  max-width: 90vw;
+  text-overflow: clip;
+  word-break: break-word;
   transform: translate3d(-50%,-50%,0);
 
   .fx-wrap {
@@ -21,54 +43,102 @@ body {
 
     h1 {
       font-size: calc(50px + 2vh + 2vw);
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: $letter-spacing;
-      padding-left: $letter-spacing;
       position: relative;
       z-index: 2;
-      text-transform: uppercase;
+      display: inline-block;
     }
     .fx-text {
       @extend h1;
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate3d(0px, 0px, 0px);
-      transition: transform 2s ease;
+      transform: translate3d(0%, 0%, 0%);
+      transition: transform .2s ease;
       z-index: 1;
 
       &:before {
         content: attr(data-text);
         position: relative;
-        opacity: .5;
         z-index: 1;
+        transition: all 0.2s ease;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        .explode & {
+          opacity: .4;
+        }
       }
       &.red:before {
         color: red;
         z-index: 1;
-        top: -8px;
+        .explode & {
+          top: -8px;
+        }
       }
       &.blue:before {
         color: #5600ff;
         z-index: 2;
-        top: 8px;
+        .explode & {
+          top: 8px;
+        }
       }
       &.green:before {
         color: #00b8ff;
         z-index: 3;
-        left: 8px;
+        .explode & {
+          left: 8px;
+        }
       }
       &.yellow:before {
         color: #ffc800;
         z-index: 4;
-        left: -8px;
+        .explode & {
+          left: -8px;
+        }
       }
     }
 
   }
 
   p {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
+}
+
+// the settings wrap
+.settings-wrap {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  bottom: calc(1vh + 1vw);
+  left: 50%;
+  transform: translateX(-50%);
+  input {
+    margin-right: calc(1vh + 1vw);
+    min-width: 30vw;
+  }
+
+  @media only screen and (min-width : 800px) {
+    display: block;
+  }
+
+}
+
+// night mode
+body.night {
+  background: #09091d;
+  color: white;
+  input {
+    color: #ffffff;
+    border-color: #983aff;
+  }
+  &.explode .fx-wrap .fx-text:before {
+    opacity: 0.6;
+  }
+  .fx-wrap .fx-text.yellow:before {
+    color: #983aff;
+  }
 }

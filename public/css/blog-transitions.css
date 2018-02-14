@@ -53,7 +53,10 @@ h6 {
   text-transform: uppercase; }
 
 p {
-  margin-bottom: calc(24px + .8vh + .8vw); }
+  margin-bottom: calc(24px + .8vh + .8vw);
+  font-size: calc(12px + .3vh + .3vw);
+  font-weight: 400;
+  line-height: 1.6; }
 
 /* header and navigation */
 header {

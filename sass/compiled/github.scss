@@ -1,0 +1,31 @@
+.github-wrap {
+  position: fixed;
+  bottom: calc(1vh + 1vw);
+  left: calc(1vh + 1vw);
+  right: calc(1vh + 1vw);
+
+  a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+    transform: translateY(0px);
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  .left-link {
+    display: block;
+    float: left;
+    button {
+      margin-right: calc(.5vw + .5vh);
+    }
+  }
+  .right-link {
+    display: block;
+    float: right;
+    button {
+      margin-left: calc(.5vw + .5vh);
+    }
+  }
+}
