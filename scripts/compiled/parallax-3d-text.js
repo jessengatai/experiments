@@ -106,7 +106,7 @@ jQuery(document).ready(function($) {
       el.text('Night');
     }
   }
-  $(document).on('click','button', function(){
+  $(document).on('click','button#night-switch', function(){
     updateStyle( $(this) );
   });
 
