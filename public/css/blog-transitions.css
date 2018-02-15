@@ -52,11 +52,71 @@ h6 {
   letter-spacing: 3px;
   text-transform: uppercase; }
 
-p {
+p, input[type="text"],
+textarea, button {
   margin-bottom: calc(24px + .8vh + .8vw);
   font-size: calc(12px + .3vh + .3vw);
   font-weight: 400;
   line-height: 1.6; }
+
+/* handle basic inputs */
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: none;
+  border-bottom: solid 2px black;
+  margin: 0px; }
+
+button {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 999px;
+  height: calc(15px + 1.2vh + 1.2vw);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0px;
+  line-height: calc(15px + 1.2vh + 1.2vw);
+  text-align: center;
+  background: white;
+  color: black;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; }
+  button:hover {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); }
+  button.circle {
+    height: calc(15px + 1.2vh + 1.2vw);
+    width: calc(15px + 1.2vh + 1.2vw);
+    padding: 0px; }
+
+.github-wrap {
+  position: fixed;
+  bottom: calc(1vh + 1vw);
+  left: calc(1vh + 1vw);
+  right: calc(1vh + 1vw); }
+  .github-wrap a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+    transform: translateY(0px);
+    transition: all 0.3s ease; }
+    .github-wrap a:hover {
+      transform: translateY(-5px); }
+  .github-wrap .left-link {
+    display: block;
+    float: left; }
+    .github-wrap .left-link button {
+      margin-right: calc(.5vw + .5vh); }
+  .github-wrap .right-link {
+    display: block;
+    float: right; }
+    .github-wrap .right-link button {
+      margin-left: calc(.5vw + .5vh); }
 
 /* header and navigation */
 header {
@@ -172,7 +232,8 @@ article {
         margin-bottom: calc(10px + .5vh + .5vw); }
       article .banner .banner-content .post-author {
         margin-bottom: calc(20px + 1.5vh + 1.5vw); }
-      article .banner .banner-content p {
+      article .banner .banner-content p, article .banner .banner-content input[type="text"], article .banner .banner-content
+      textarea, article .banner .banner-content button {
         margin-bottom: calc(.2vh + .2vw);
         opacity: 0.9;
         text-shadow: none; }
