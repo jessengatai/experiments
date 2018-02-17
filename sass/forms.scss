@@ -19,22 +19,17 @@ button {
   border: none;
   box-shadow: none;
   @extend p;
-
   border: none;
   border-radius: 999px;
-
   height: $height;
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0px;
-
   line-height: $height;
   text-align: center;
-
   background: white;
   color: black;
   cursor: pointer;
-
   transition: box-shadow 0.3s ease;
   &:hover {
     box-shadow: 0 3px 15px rgba(0,0,0,.1);
@@ -46,6 +41,3 @@ button {
   }
 
 }
-    button {
-
-    }

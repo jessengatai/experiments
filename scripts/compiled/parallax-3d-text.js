@@ -10,12 +10,6 @@ jQuery(document).ready(function($) {
     }, 500);
   });
 
-  // $('.content-wrap h1').on('mouseover', function(){
-  //   $('body').removeClass('explode');
-  // }).on('mouseout', function(){
-  //   $('body').addClass('explode');
-  // });
-
   /**
    * Debounce things for smoother transitions and less window paints
    * @param  {callback} fn   the callback to run after the debounce time
@@ -93,6 +87,10 @@ jQuery(document).ready(function($) {
     updateCity($(this).val());
   });
 
+  /**
+   * Update the style of the page (night / day)
+   * @param  {object} el the button element being clicked
+   */
   const updateStyle = (el) => {
     let b = $('body');
     b.removeClass('explode');
